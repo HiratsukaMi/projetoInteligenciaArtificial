@@ -1,0 +1,29 @@
+.textoIntroducao,
+h2,
+h3,
+ul {
+    font-family: 'Nunito';
+    font-weight: 500;
+    padding-left: 4em;
+    padding-right: 4em;
+    text-align: justify;
+}
+
+li {
+	text-align: justify;
+}
+
+h2,
+h3 {
+    font-family: 'Chakra Petch';
+    font-weight: 600;
+}
+
+.figura {
+    max-width: 40%;
+}
+
+.navegacao a,
+.conteudo a {
+    font-size: medium;
+}

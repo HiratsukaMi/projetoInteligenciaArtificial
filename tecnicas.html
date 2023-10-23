@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Inteligência Artificial aplicada em Jogos Digitais</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/principal.css">
+        <link rel="stylesheet" href="css/introducao.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
+    </head>
+    <body class="fundo">
+        <center><div class="conteudo">
+            <img class="titulo" src="imagens/Titulo.png">
+            <div class="introducao">
+                <h2 align="left"><font class="contorno" color="#7A64F5">Aspectos técnicos de IA em Jogos Digitais</font></h2>
+                <p class="textoIntroducao" align="left">
+                    Nesta página serão abordados alguns jogos digitais, juntamente com as técnicas e algoritmos utilizados em suas criações. 
+                    De acordo com Becker (2018, p. 159), “A Inteligência Artificial (<strong><em><font color="#0000ff">Artificial Intelligence ou AI</font></em></strong>) nos jogos não precisa ser 
+                    realmente inteligente, mas com certeza precisa passar a impressão de ser.”
+                </p>
+                <h3 align="left"><font class="contorno" color="#7A64F5"><em>Pac- Man</em> e o <em>Pathfinding</em></font></h3>
+                <p class="textoIntroducao" align="left">
+                    <strong><em><font color="#0000ff">Pac-man</font></em></strong>, jogo onde o objetivo é coletar todas as bolinhas brancas e comidas pela tela; tomando cuidado com os cinco inimigos 
+                    espalhados pelo mapa, foi lançado em fliperamas em 22 de maio de 1980 no Japão. O jogo foi adaptado para consoles em 1981, onde fez 
+                    sucesso, principalmente, no Atari 2600 e foi considerado o principal game do aparelho (VINHA, 2013). Na Figura abaixo, é possível observar 
+                    a tela do jogo <strong><em><font color="#0000ff">Pac-Man</font></em></strong>.
+                </p>
+                <br>
+                <figure>
+                    <img class="figura" src="imagens/JogoPacMan.jpg" alt="Representação do jogo Pac-man.">
+                    <figcaption><strong><font class="contorno" color="#7A64F5">Representação do jogo <em>Pac-man</em></font></strong></figcaption>
+                </figure>
+                <br>
+                <p class="textoIntroducao" align="left">
+                    Para mover os inimigos de diferentes jeitos, sem que eles batam em obstáculos e ofereçam algum grau de dificuldade ao jogador, é utilizado 
+                    uma técnica de IA chamada <strong><em><font color="#0000ff">pathfinding</font></em></strong>, que traduzido para o português seria “procurando o caminho”. O algoritmo faz exatamente isso: ele 
+                    procura caminhos que não possuam obstáculos, fazendo com que os inimigos não quebrem as leis da física; além de trazer certa dificuldade 
+                    nos movimentos do jogador (BECKER, 2018).
+                </p>
+                <p class="textoIntroducao" align="left">
+                    O <strong><em><font color="#0000ff">pathfinding</font></em></strong> funciona da seguinte forma: exista um ponto de partida A, onde os fantasmas iniciam o jogo; existe um ponto de chegada B, 
+                    para onde os fantasmas irão se locomover; e existem as paredes do labirinto, que são os obstáculos tanto para os fantasmas, quanto para 
+                    o jogador.
+                </p>
+                <p class="textoIntroducao" align="left">
+                    Para encontrar um caminho sem obstáculos, o mapa é dividido em uma grade quadrada, diminuindo a área de procura a uma simples bidimensional. 
+                    O algoritmo fará uma varredura para ver quais dos quadrados não têm obstáculos, traçando um caminho do ponto A ao ponto B (LESTER, 2004). 
+                    Na Figura a seguir é representada uma grade quadrada, com os pontos e obstáculos referidos.
+                </p>
+                <br>
+                <figure>
+                    <img class="figura" src="imagens/RepresentacaoGradeQuadrada.png" alt="Representação de uma grade quadrada.">
+                    <figcaption><strong><font class="contorno" color="#7A64F5">Representação de uma grade quadrada</font></strong></figcaption>
+                </figure>
+                <br>
+                <p class="textoIntroducao" align="left">
+                    Segundo Lester (2004, p. 1), “Uma vez que o caminho é achado, nossa entidade move do centro de um quadrado ao centro do próximo e assim 
+                    sucessivamente até que o objetivo é alcançado.”. Os pontos centrais (quadrados) desta grade são denominados “nó”. Esta grade pode ser 
+                    dividida de várias formas diferentes, como retângulos, hexágonos, triângulos e outras formas geométricas. Com isso, os nós podem ser 
+                    distribuídos aleatoriamente, desde que estejam dentro da forma geométrica.
+                </p>
+                <p class="textoIntroducao" align="left">
+                    Para fazer a varredura e encontrar um caminho livre para passar de um ponto a outro, o algoritmo checa os quadrados que cercam o nós 
+                    principal inicial, para verificar os que não possuem obstáculo algum. Após isso, ele faz a mesma coisa com a próxima camada que o rodeia, 
+                    a fim de verificar se não existe obstáculos. O algoritmo segue essa mesma linha de raciocínio até encontrar um caminho válido para se 
+                    locomover até o ponto de chegada. A mesma coisa acontece com o nó principal de chegada: é checado todos os quadrados ao redor dele, para 
+                    que o personagem chegue ao destino sem quebrar as leis da física como, por exemplo, atravessando paredes (LESTER, 2004). Na Figura abaixo, 
+                    a representação gráfica de um <strong><em><font color="#0000ff">pathfinding</font></em></strong> pode ser observada.
+                </p>
+                <br>
+                <figure>
+                    <img class="figura" src="imagens/RepresentacaoGraficaPathfinding.png" alt="Representação gráfica do pathfinding.">
+                    <figcaption><strong><font class="contorno" color="#7A64F5">Representação gráfica do pathfinding</font></strong></figcaption>
+                </figure>
+                <br>
+                <p class="textoIntroducao" align="left">
+                    A Figura acima mostra o trajeto feito do ponto inicial (verde) ao ponto final (vermelho). O algoritmo é responsável por essa verificação, 
+                    impedindo que o indivíduo movimentado não ultrapasse as paredes, representadas pelas partes escuras e se movimente de forma lógica pelo 
+                    plano utilizado (BECKER, 2018).
+                </p>
+                <h3><em><font class="contorno" color="#7A64F5">Battlecruiser</em>: 3000 AD e as Redes Neurais</font></h3>
+                <p class="textoIntroducao" align="left">
+                    O jogo foi criado por Derek Smart e lançado em 1996. Se trata de uma exploração espacial, onde o jogador precisa destruir os inimigos que 
+                    aparecem na tela. Na Figura a seguir pode-se observar uma demonstração da tela do jogo, contendo algumas informações que auxiliam o jogador 
+                    durante a partida.
+                </p>
+                <br>
+                <figure>
+                    <img class="figura" src="imagens/JogoBattlecruiser3000AD.jpg" alt="Representação do jogo Battlecruiser: 3000 AD.">
+                    <figcaption><strong><font class="contorno" color="#7A64F5">Representação do jogo <em>Battlecruiser</em>: 3000 AD</font></strong></figcaption>
+                </figure>
+                <br>
+                <p class="textoIntroducao" align="left">
+                    Este foi o primeiro jogo a aplicar Redes Neurais Artificiais em seus mecanismos. O método se emprega em combates, negociações e decisões 
+                    dos NPC’s, tanto em inimigos quanto em aliados, como afirma Lima (2012). Porém há uma discussão sobre o desenvolvimento do <em>game</em>: os 
+                    criadores dizem ter utilizados métodos de IA na criação, mas muitos discordam sobre essa afirmação.
+                </p>
+                <p class="textoIntroducao" align="left">
+                    As Redes Neurais Artificiais, como visto no capítulo anterior, são compostas por vários neurônios feitos matematicamente, permitindo aos 
+                    NPC’s aprenderem com as ações do jogador. De acordo com Kishimoto (2004, p. 7), “A implementação de redes neurais em jogos também é 
+                    realizada, onde os personagens necessitam de aprendizado através das escolhas do jogador”. 
+                </p>
+                <h3><font class="contorno" color="#7A64F5"><em>Black</em> & <em>White</em> e a Aprendizagem por Reforço</font></h3>
+                <p class="textoIntroducao" align="left">
+                    <strong><font color="#0000ff"><em>Black</em> & <em>White</em></font></strong> foi desenvolvido pela <em><font color="#0000ff">Lionhead Studios</font></em>, distribuído pela EA (<em><font color="#0000ff">Eletronic Arts</font></em>) em 2001 
+                    para PC (<em><font color="#0000ff">Personal Computer</font></em>) nos sistemas operacionais <em><font color="#0000ff">Windows</font></em> e <em><font color="#0000ff">Mac OS</font></em>. É um game de estratégia, onde o 
+                    jogador é um deus responsável por uma ilha habitada por diversas tribos. Dependendo das ações tomadas durante a partida, o deus pode 
+                    ser bondoso ou caótico, influenciando na aparência das tribos, aparência do deus, no clima e no território como um todo. O deus, que é 
+                    representado por uma criatura animalesca antropomórfica, “não pode ser diretamente controlada pelo jogador, apenas doutrinada a realizar 
+                    certas ações, através de treinamento, recompensas e punições.”, de acordo com Rodando Planeta <em>Gamer</em> (2017). Na Figura abaixo 
+                    há a representação da tela do jogo.
+                </p>
+                <br>
+                <figure>
+                    <img class="figura" src="imagens/JogoBlackAndWhite.jpg" alt="Representação do jogo Black & White.">
+                    <figcaption><strong><font class="contorno" color="#7A64F5">Representação do jogo <em>Black</em> & <em>White</em></font></strong></figcaption>
+                </figure>
+                <br>
+                <p class="textoIntroducao" align="left">
+                    O game possui várias técnicas de IA implementadas nele, como redes neurais, <strong><em><font color="#0000ff">reinforcement</font></em></strong> e <strong><em><font color="#0000ff">observational learning</font></em></strong> (KISHIMOTO, 2004). 
+                    A aprendizagem por reforço, ou <strong><em><font color="#0000ff">reinforcement</font></em></strong>, é a que será mais abordada neste tópico. Como visto na página de <a class="navegacao" href="conceitos.html"><font color="#ee800d">conceitos básicos</font></a>, 
+                    “a ideia básica é que um agente [...] procura cumprir uma determinada tarefa, inicialmente com uma abordagem de tentativa e erro.”, 
+                    segundo Neves ([2020]).
+                </p>
+                <p class="textoIntroducao" align="left">
+                    Após isso, o agente é treinado através do sistema de recompensa/punição, pois ele precisará testar todos os resultados, independente 
+                    deles serem positivos ou negativos. De acordo com Neves ([2020]), alguns conceitos básicos são aplicados a aprendizagem por reforço, 
+                    como visto na lista a seguir:
+                </p>
+                <ul type="square">
+                    <li align="left">
+                        <strong><font color="#ff0000">Agente</font></strong>: <em><font color="#0000ff">Software</font></em> ou <em><font color="#0000ff">Software</font></em> + <em><font color="#0000ff">Hardware</font></em> que interage com o ambiente, a fim de tomar 
+                        decisões através de suas ações e, caso o resultado seja positivo, ganha a recompensa;
+                    </li>
+                    <li align="left">
+                        <strong><font color="#ff0000">Ambiente</font></strong>: É um plano material ou simulação do problema em questão. É nele que o agente irá interagir, para assim 
+                        aprender a solucionar o problema;
+                    </li>
+                    <li align="left">
+                        <strong><font color="#ff0000">Estado (s)</font></strong>: Representa como o agente + ambiente se encontram no momento. Sempre que o agente tem uma resposta 
+                        positiva, o ambiente entra em um novo estado e fornece a recompensa a ele;
+                    </li>
+                    <li align="left">
+                        <strong><font color="#ff0000">Política (π)</font></strong>: Estratégia utilizada pelo agente, observando o estado atual do ambiente. Através dela, ele procura 
+                        o melhor resultado para determinada situação;
+                    </li>
+                    <li align="left">
+                        <strong><font color="#ff0000">Recompensa (r)</font></strong>: É responsável por nortear o agente, a partir da política utilizada por ele. Dependendo das ações 
+                        tomadas pelo agente, ele pode ganhar a recompensa positiva, a negativa ou a nula.
+                    </li>
+                </ul>
+                <p class="textoIntroducao" align="left">
+                    Através destes conceitos, é possível aplicar o aprendizado por reforço, porém, Segundo Neves ([2020]), “essas experiências geralmente 
+                    são simuladas, [...] e o aprendizado se dá tanto com os acertos quanto com os erros.”.
+                </p>
+                <br>
+                <br>
+                <table class="navegacao" cellpadding="6">
+                    <tr>
+                        <td align="center"><a href="index.html"><font class="contorno" color="#7A64F5">Voltar ao menu</font></a></td>
+                        <td align="center"><a href="metodos.html"><font class="contorno" color="#5BA3F0">Página Anterior</font></a></td>
+                        <td align="center"><a href="referencias.html"><font class="contorno" color="#647CF5">Próxima página</font></a></td>
+                    </tr>
+                </table>
+            </div>
+            <footer>Este site foi criado por: <strong>Michelly Hiratsuka Zorzi - 1º Semestre de Desenvolvimento de Sistemas</strong></footer><br>
+        </div></center>
+    </body>
+</html>
